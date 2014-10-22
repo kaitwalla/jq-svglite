@@ -1,0 +1,274 @@
+{
+    "title": "Pennsylvania Election Results 2012 - Map, County Results, Live Updates - POLITICO.com",
+    "results": [
+        {
+            "county": "Adams",
+            "winner": "GOP"
+        },
+        {
+            "county": "Allegheny",
+            "winner": "Dem"
+        },
+        {
+            "county": "Armstrong",
+            "winner": "GOP"
+        },
+        {
+            "county": "Beaver",
+            "winner": "GOP"
+        },
+        {
+            "county": "Bedford",
+            "winner": "GOP"
+        },
+        {
+            "county": "Berks",
+            "winner": "GOP"
+        },
+        {
+            "county": "Blair",
+            "winner": "GOP"
+        },
+        {
+            "county": "Bradford",
+            "winner": "GOP"
+        },
+        {
+            "county": "Bucks",
+            "winner": "Dem"
+        },
+        {
+            "county": "Butler",
+            "winner": "GOP"
+        },
+        {
+            "county": "Cambria",
+            "winner": "GOP"
+        },
+        {
+            "county": "Cameron",
+            "winner": "GOP"
+        },
+        {
+            "county": "Carbon",
+            "winner": "GOP"
+        },
+        {
+            "county": "Centre",
+            "winner": "GOP"
+        },
+        {
+            "county": "Chester",
+            "winner":"GOP"
+        },
+        {
+            "county": "Clarion",
+            "winner": "GOP"
+        },
+        {
+            "county": "Clearfield",
+            "winner": "GOP"
+        },
+        {
+            "county": "Clinton",
+            "winner": "GOP"
+        },
+        {
+            "county": "Columbia",
+            "winner": "GOP"
+        },
+        {
+            "county": "Crawford",
+            "winner": "GOP"
+        },
+        {
+            "county": "Cumberland",
+            "winner": "GOP"
+        },
+        {
+            "county": "Dauphin",
+            "winner": "Dem"
+        },
+        {
+            "county": "Delaware",
+            "winner": "Dem"
+        },
+        {
+            "county": "Elk",
+            "winner": "GOP"
+        },
+        {
+            "county": "Erie",
+            "winner": "Dem"
+        },
+        {
+            "county": "Fayette",
+            "winner": "GOP"
+        },
+        {
+            "county": "Forest",
+            "winner": "GOP"
+        },
+        {
+            "county": "Franklin",
+            "winner": "GOP"
+        },
+        {
+            "county": "Fulton",
+            "winner": "GOP"
+        },
+        {
+            "county": "Greene",
+            "winner": "GOP"
+        },
+        {
+            "county": "Huntingdon",
+            "winner": "GOP"
+        },
+        {
+            "county": "Indiana",
+            "winner": "GOP"
+        },
+        {
+            "county": "Jefferson",
+            "winner": "GOP"
+        },
+        {
+            "county": "Juniata",
+            "winner": "GOP"
+        },
+        {
+            "county": "Lackawanna",
+            "winner": "Dem"
+        },
+        {
+            "county": "Lancaster",
+            "winner": "GOP"
+        },
+        {
+            "county": "Lawrence",
+            "winner": "GOP"
+        },
+        {
+            "county": "Lebanon",
+            "winner": "GOP"
+        },
+        {
+            "county": "Lehigh",
+            "winner": "Dem"
+        },
+        {
+            "county": "Luzerne",
+            "winner": "Dem"
+        },
+        {
+            "county": "Lycoming",
+            "winner": "GOP"
+        },
+        {
+            "county": "McKean",
+            "winner": "GOP"
+        },
+        {
+            "county": "Mercer",
+            "winner": "GOP"
+        },
+        {
+            "county": "Mifflin",
+            "winner": "GOP"
+        },
+        {
+            "county": "Monroe",
+            "winner": "Dem"
+        },
+        {
+            "county": "Montgomery",
+            "winner": "Dem"
+        },
+        {
+            "county": "Montour",
+            "winner": "GOP"
+        },
+        {
+            "county": "Northampton",
+            "winner": "Dem"
+        },
+        {
+            "county": "Northumberland",
+            "winner": "GOP"
+        },
+        {
+            "county": "Perry",
+            "winner": "GOP"
+        },
+        {
+            "county":"Philadelphia",
+            "winner":"GOP"
+        },
+        {
+            "county": "Pike",
+            "winner": "GOP"
+        },
+        {
+            "county": "Potter",
+            "winner": "GOP"
+        },
+        {
+            "county": "Schuylkill",
+            "winner": "GOP"
+        },
+        {
+            "county": "Snyder",
+            "winner": "GOP"
+        },
+        {
+            "county": "Somerset",
+            "winner": "GOP"
+        },
+        {
+            "county": "Sullivan",
+            "winner": "GOP"
+        },
+        {
+            "county": "Susquehanna",
+            "winner": "GOP"
+        },
+        {
+            "county": "Tioga",
+            "winner": "GOP"
+        },
+        {
+            "county": "Union",
+            "winner": "GOP"
+        },
+        {
+            "county": "Venango",
+            "winner": "GOP"
+        },
+        {
+            "county": "Warren",
+            "winner": "GOP"
+        },
+        {
+            "county": "Washington",
+            "winner": "GOP"
+        },
+        {
+            "county": "Wayne",
+            "winner": "GOP"
+        },
+        {
+            "county": "Westmoreland",
+            "winner": "GOP"
+        },
+        {
+            "county": "Wyoming",
+            "winner": "GOP"
+        },
+        {
+            "county": "York",
+            "winner": "GOP"
+        }
+    ],
+    "pageUrl": "http://www.politico.com/2012-election/results/president/pennsylvania/"
+}
