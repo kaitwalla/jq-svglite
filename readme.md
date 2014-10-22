@@ -2,6 +2,9 @@
 
 Use a combination of jQuery and CSS to do some basic style transformations with inline SVGs. Best use case is situations where you already have an SVG file (say, a map) and want to change the fill or stroke properties on the fly, or dynamically set the size of the element (including responsive).
 
+See more on the plugin [here](http://unjournalist.com/svglite-jquery-plugin-for-manipulating-svg-fills-strokes-and-sizing/)  
+See it in action [here](http://zedley.github.io/svglite/)
+
 ##Basic usage
 
 To get the party started, you need to include any settings (see below), then select your element with the jQuery selector and invoke the plugin thusly:  
