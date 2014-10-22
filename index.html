@@ -28,37 +28,83 @@
         </ul>
       </header>
       <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+        <h1>
+<a name="svglite" class="anchor" href="#svglite"><span class="octicon octicon-link"></span></a>SVGLite</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>Use a combination of jQuery and CSS to do some basic style transformations with inline SVGs. Best use case is situations where you already have an SVG file (say, a map) and want to change the fill or stroke properties on the fly, or dynamically set the size of the element (including responsive).</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic usage</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>To get the party started, you need to include any settings (see below), then select your element with the jQuery selector and invoke the plugin thusly:<br>
+<code>$('#mySVG').svglite();</code><br>
+Please note that this does almost nothing, but if you use the accompanying functions <code>pathclass</code> or <code>pathclass_pattern</code> you should call svglite first to set the properties.</p>
 
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a name="properties" class="anchor" href="#properties"><span class="octicon octicon-link"></span></a>Properties</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>You have four basic properties to call here:<br>
+• <code>resize</code>: Whether you want the SVG to automatically resize based on the window size (true or false)<br>
+• <code>patterns</code>: If you're going to be using pattern fills for this element, you need to set the animation timing for the patterns here, in seconds. For more on this, see "Patterns".<br>
+• <code>default_opacity</code>: This setting is also used for patterns. The default opacity setting for your paths.<br>
+• <code>change_opacity'</code>: This is the path opacity you're changing to. (See "Patterns")<br>
+• <code>special</code>: If you have a specific size you want the SVG to be sized to, use this property with the name of the size you want. You'll declare the size in the settings, below.</p>
 
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a name="settings" class="anchor" href="#settings"><span class="octicon octicon-link"></span></a>Settings</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>Including the plugin file will automatically create a global variable <code>svglitedefs</code> that we're going to use for a few global settings. </p>
+
+<p><code>svglitedefs.resize[str]</code>: This is the setting the 'special' property refers to. The example is if you have a CMS with a set width. This way we can declare a special setting "wordpress" to never go wider than 600 pixels with <code>svglitedefs.resize['wordpress'] = 600;</code>. Then, when you invoke the plugin, use <code>$('#svg').svglite({special:'wordpress'});</code>.<br>
+<code>svglitedefs.max</code>: Used with the responsive property to set a maximum width. If you want it to resize up to 1000px, set this to <code>1000</code>.</p>
+
+<h2>
+<a name="class-changes" class="anchor" href="#class-changes"><span class="octicon octicon-link"></span></a>Class changes</h2>
 
 <h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<a name="colors" class="anchor" href="#colors"><span class="octicon octicon-link"></span></a>Colors</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>The other big thing that SVGLite provides is the ability to change the styling of your SVG paths. (Note: This may also work on polyfills, compound paths and groups, but it's only been tested on paths because that's all I needed it to do.)</p>
+
+<p>Most of this is done via CSS, but the provided secondary jQuery functions (pathclass and pathclass_pattern) provide an easy method to implement the necessary CSS changes (<code>$.addClass</code> and <code>$.removeClass</code> DO NOT WORK on SVGs. Trust me). The script automatically calls in the necessary transitions on all paths that are children of your main SVG element.</p>
+
+<p>Usage is pretty easy. If you're using just color fills (or changing the stroke), use <code>$.pathclass</code> thusly:  </p>
+
+<p><code>$('#path_id').pathclass('class');</code></p>
+
+<p>The default behavior is to replace all classes with the one provided. If you want to add a class while keeping the extant ones, use this:</p>
+
+<p><code>$('#path_id').pathclass('class','add');</code></p>
+
+<p>If you want to clear all classes, run the function with no parameters.</p>
+
+<p><code>$('#path_id').pathclass();</code></p>
+
+<p>If you want to remove a specific class, this:</p>
+
+<p><code>$('#path_id').pathclass('class','remove');</code></p>
+
+<h3>
+<a name="patterns" class="anchor" href="#patterns"><span class="octicon octicon-link"></span></a>Patterns</h3>
+
+<p>Patterns are the SVG implementation of background images. Because these must be defined <a href="http://stackoverflow.com/a/3798797/645364">within the SVG</a> itself, the CSS fade we're using for colors doesn't work. Hence, if you're working with elements that are EVER going to use a pattern fill, you should use this second set of functions.</p>
+
+<p>Basically, we fake the transitions via the fill-opacity CSS property, which does exactly what you think it does. How the examples do it are pretty simple: everything starts at a mostly transparent color (0.1 black, which renders a light gray). You could also start with something super dark and fade in and out, but for our purposes we go light to dark.</p>
+
+<p>So our example would use</p>
+
+<p><code>$('#svg).svglite({change_opacity:1,default_opacity:0.1});</code></p>
+
+<p>And for our class changes we would use</p>
+
+<p><code>$('#path_id').pathclass_pattern();</code></p>
+
+<p>With the same rules that apply above in terms of adding and removing classes.</p>
+
+<h2>
+<a name="limitations" class="anchor" href="#limitations"><span class="octicon octicon-link"></span></a>Limitations</h2>
+
+<p>I cannot stress enough the basic nature of this plugin. If you want to do anything other than change the fill, stroke or size of your SVG, this plugin <strong>will not do jack for you</strong>. I created it for my own uses for basic maps, and am loading up <a href="http://stackoverflow.com/questions/4809194/convert-svg-image-to-png-with-php">ImageMagick-created PNGs</a> as fallbacks.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/zedley">zedley</a></p>
