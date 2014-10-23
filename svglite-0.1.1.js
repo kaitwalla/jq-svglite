@@ -12,17 +12,17 @@
 					window.svglite = {};
 					window.svglite.obj = [];
 				}
-				$('<style>svg#'+$(this).attr('id')+' path { transition: fill 1.5s ease,fill-opacity 1.5s,stroke-width 0.5s; -webkit-backface-visiblity: hidden; -webkit-transition: fill 1.5s ease,fill-opacity 1.5s,stroke-width 0.5s;  }</style>').appendTo('html');
 				date = new Date;
 				var hash = Math.floor(date.getTime() * Math.random(0x10000));
 				this.attr('svglite',hash);
 				var settings = $.extend({
 					resize: false,
 					special: '',
-					patterns: false,
+					speed: 1500,
 					default_opacity: 1,
-					change_opacity: 1
+					change_opacity: 1,
 				},opts);
+				$('<style>svg#'+$(this).attr('id')+' path { transition: fill '+settings.speed/1000+'s ease,fill-opacity '+settings.speed/1000+'s; -webkit-backface-visiblity: hidden; -webkit-transition: fill '+settings.speed/1000+'s ease,fill-opacity '+settings.speed/1000+'s;  }</style>').appendTo('html');
 				var obj = {};
 				obj.hash = hash;
 				obj.defaults = Array(parseInt(this.attr('height')),parseInt(this.attr('width')));

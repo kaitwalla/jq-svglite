@@ -15,7 +15,7 @@ Please note that this does almost nothing, but if you use the accompanying funct
 
 You have four basic properties to call here:  
 • `resize`: Whether you want the SVG to automatically resize based on the window size (true or false)  
-• `patterns`: If you're going to be using pattern fills for this element, you need to set the animation timing for the patterns here, in seconds. For more on this, see "Patterns".  
+• `speed`: If you're going to be using pattern fills for this element, you need to set the animation timing for the patterns here, in milliseconds. For more on this, see "Patterns."  
 • `default_opacity`: This setting is also used for patterns. The default opacity setting for your paths.  
 • `change_opacity'`: This is the path opacity you're changing to. (See "Patterns")  
 • `special`: If you have a specific size you want the SVG to be sized to, use this property with the name of the size you want. You'll declare the size in the settings, below.
